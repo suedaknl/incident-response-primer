@@ -172,3 +172,34 @@ describe('SE Primer — karar ağacı E2E', () => {
     });
   });
 });
+
+describe("Diferansiyel test: Python (ONNX) vs tarayıcı (onnxruntime-web)", () => {
+  const TOLERANS = 1e-4;
+
+  it("5 referans girdide |p_js - p_python| < 1e-4", () => {
+    cy.readFile("tests/parite.json").then((vakalar) => {
+      expect(vakalar).to.have.length.greaterThan(0);
+
+      cy.visit("/"); // baseUrl'ine göre oyun sayfasının yolunu ayarla
+
+      vakalar.forEach((vaka, i) => {
+        // Model ilk seferde indirilebilir, bu yüzden uzun timeout
+        cy.window().then({ timeout: 60000 }, (win) =>
+          win.ipucuOlasiligiHesapla(vaka.girdi)
+        );
+
+        cy.get('[data-cy="p"]')
+          .invoke("text")
+          .then((metin) => {
+            const pJs = parseFloat(metin);
+            expect(pJs, `vaka ${i} sayısal mı`).to.not.be.NaN;
+            const fark = Math.abs(pJs - vaka.p1);
+            expect(
+              fark,
+              `vaka ${i}: JS=${pJs}, Python=${vaka.p1}, fark=${fark}`
+            ).to.be.lessThan(TOLERANS);
+          });
+      });
+    });
+  });
+});

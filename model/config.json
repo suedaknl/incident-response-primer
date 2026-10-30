@@ -1,0 +1,17 @@
+{
+  "girdi_adi": "input",
+  "ozellikler": [
+    "seviye",
+    "karar_suresi_sn",
+    "onceki_yanlis_sayisi"
+  ],
+  "hedef": "ipucu_gerekti",
+  "siniflar": [
+    0,
+    1
+  ],
+  "olasilik_cikti_adi": "probabilities",
+  "esik": 0.7,
+  "accuracy": 0.75,
+  "random_state": 42
+}

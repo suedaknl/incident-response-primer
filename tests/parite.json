@@ -1,0 +1,47 @@
+[
+  {
+    "girdi": {
+      "seviye": 1,
+      "karar_suresi_sn": 3.0,
+      "onceki_yanlis_sayisi": 0
+    },
+    "p0": 0.9852529764175415,
+    "p1": 0.014747053384780884
+  },
+  {
+    "girdi": {
+      "seviye": 2,
+      "karar_suresi_sn": 8.5,
+      "onceki_yanlis_sayisi": 1
+    },
+    "p0": 0.8741847276687622,
+    "p1": 0.12581530213356018
+  },
+  {
+    "girdi": {
+      "seviye": 3,
+      "karar_suresi_sn": 15.0,
+      "onceki_yanlis_sayisi": 2
+    },
+    "p0": 0.3991435170173645,
+    "p1": 0.6008564829826355
+  },
+  {
+    "girdi": {
+      "seviye": 4,
+      "karar_suresi_sn": 25.0,
+      "onceki_yanlis_sayisi": 4
+    },
+    "p0": 0.010128021240234375,
+    "p1": 0.9898719787597656
+  },
+  {
+    "girdi": {
+      "seviye": 5,
+      "karar_suresi_sn": 40.0,
+      "onceki_yanlis_sayisi": 7
+    },
+    "p0": 2.2411346435546875e-05,
+    "p1": 0.9999775886535645
+  }
+]

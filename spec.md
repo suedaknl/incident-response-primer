@@ -93,3 +93,11 @@ else:
 
 - Sonuç mantığı istemcide deterministiktir; AI yalnızca anlatım ve Sokratik soru üretir (test edilebilirlik ve tutarlılık için).
 - Senaryodaki KVKK bildirim süreleri (ör. Kurul'a 72 saat içinde bildirim) ders materyalinizle teyit edilip hikâye metnine eklenmelidir.
+
+## v2.0 Makine Öğrenmesi (ML) Gereksinimi
+* **Gereksinim:** Sistem, oyuncunun karar süreleri ve önceki hatalarını değerlendirerek statik kural setine ek olarak ML destekli ipucu olasılığını hesaplayacaktır.
+* **Eval Metriği ve Kabul Eşiği:** Doğruluk (Accuracy) ≥ %70. (Eşik, eğitimden önce `train.py` içine sabitlenmiştir).
+* **Kabul Örnekleri (Altın Standart):**
+  1. Deneyimsiz (seviye=2) bir oyuncu 45 saniye boyunca seçim yapamaz ve daha önce 1 kez yanlış yapmışsa sistem ipucu üretebilmelidir.
+  2. Deneyimli (seviye=0) bir oyuncu 8 saniye içinde hızlıca tıklıyorsa sistem ipucu üretmemelidir.
+  3. Deneyimli (seviye=0) bir oyuncu arka arkaya 2 kez yanlış yola sapmışsa, hızından bağımsız olarak sistem müdahale edebilmelidir.
